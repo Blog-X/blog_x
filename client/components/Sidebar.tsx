@@ -42,12 +42,6 @@ const Sidebar = () => {
                     redirect="/Bcblogs"
                 />
                 <SidebarOptions
-                    option="Explore"
-                    Icon={List}
-                    isActive={Boolean(selected === 'Explore')}
-                    setSelected={setSelected}
-                />
-                <SidebarOptions
                     option="Profile"
                     Icon={User}
                     isActive={Boolean(selected === 'Profile')}
