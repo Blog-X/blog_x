@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 const styles = {
-    // wrapper: 'flex flex-row justify-center items-center cursor-pointer',
     wrapper: 'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg text-white hover:bg-gray-100 hover:bg-gray-700',
     inactive: 'hover:bg-slate-700 font-normal hover:font-bold py-2 text-lg rounded-2xl text-white',
     active: 'bg-cyan-700 font-bold py-2 rounded-2xl px-4 text-lg text-white',
