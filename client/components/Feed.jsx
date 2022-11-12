@@ -10,12 +10,7 @@ const style = {
 const Feed = ({ profile }) => {
   return (
     <div className="bg-slate-800 pb-4">
-      <div className={style.wrapper}>
-        <div className={style.header}>
-          <div className={style.headerTitle}>Home</div>
-          <BsStars />
-        </div>
-      </div>
+      <div className={style.wrapper}></div>
       <div>
         <Blogs profile={profile} />
       </div>

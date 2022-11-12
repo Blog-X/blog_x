@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Widgets from "./Widgets";
+import Navbar from "./Navbar";
 
 const styles = {
   wrapper:
@@ -17,6 +18,7 @@ const styles = {
 const HomeComp = () => {
   return (
     <div>
+      <Navbar />
       <div className={styles.wrapper}>
         <div className={styles.columns}>
           <div className={styles.sides}>
