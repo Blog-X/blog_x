@@ -51,7 +51,7 @@ const Navbar = (currentPage = "home") => {
           <Link href="/" className="basis-5/6 p-4 text-center">
             <h1
               style={{ color: `${textColor}` }}
-              className="text-4xl font-bold hover:underline cursor-pointer font-normal hover:font-bold"
+              className="text-2xl font-bold hover:underline cursor-pointer  hover:font-bold"
             >
               Blog-X
             </h1>
