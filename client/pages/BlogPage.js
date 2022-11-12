@@ -2,6 +2,7 @@ import Head from "next/head";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
 import BlogBox from "../components/BlogBox";
+import Navbar from "../components/Navbar";
 
 const styles = {
   wrapper:
@@ -23,6 +24,7 @@ export default function BlogPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Navbar />
         <div className={styles.wrapper}>
           <div className={styles.columns}>
             <div className={styles.sides}>

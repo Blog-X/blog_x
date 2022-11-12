@@ -6,7 +6,7 @@ import { BiTransfer } from "react-icons/bi";
 import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { AiFillDelete } from 'react-icons/ai';
+import { AiFillDelete } from "react-icons/ai";
 import styles from "./Blogs.module.css";
 
 const style = {
@@ -127,23 +127,32 @@ const Blogs = ({ profile }) => {
                       />
                       <p>{blog.attributes.Shares}</p>
                     </div>
-                    <div className='flex items-center gap-1'>
-
-                      {profile && <AiFillDelete className="w-5 h-5" onClick={() => {
-                        const isDeletion = window.confirm("Are you sure you want to delete this blog?");
-                        if (isDeletion) {
-                          const Blogs = Moralis.Object.extend("Blogs");
-                          const query = new Moralis.Query(Blogs);
-                          query.get(blog.id).then((object) => {
-                            object.destroy().then((response) => {
-                              console.log(response);
-                              window.location.reload();
-                            }, (error) => {
-                              console.log(error);
-                            });
-                          });
-                        }
-                      }} />}
+                    <div className="flex items-center gap-1">
+                      {profile && (
+                        <AiFillDelete
+                          className="w-5 h-5"
+                          onClick={() => {
+                            const isDeletion = window.confirm(
+                              "Are you sure you want to delete this blog?"
+                            );
+                            if (isDeletion) {
+                              const Blogs = Moralis.Object.extend("Blogs");
+                              const query = new Moralis.Query(Blogs);
+                              query.get(blog.id).then((object) => {
+                                object.destroy().then(
+                                  (response) => {
+                                    console.log(response);
+                                    window.location.reload();
+                                  },
+                                  (error) => {
+                                    console.log(error);
+                                  }
+                                );
+                              });
+                            }
+                          }}
+                        />
+                      )}
                     </div>
                   </div>
                   <div
