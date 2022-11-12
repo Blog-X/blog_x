@@ -3,6 +3,7 @@ import Moralis from "moralis-v1";
 import { useState } from "react";
 import { ethers } from "ethers";
 
+
 export const ConnectButton = () => {
   const { authenticate, enableWeb3 } = useMoralis();
   const [authError, setAuthError] = useState(null);
@@ -18,11 +19,7 @@ export const ConnectButton = () => {
       await enableWeb3({ throwOnError: true, provider });
       const { account, chainId } = Moralis;
 
-      const { ethereum } = window;
-      if (ethereum === undefined) {
-        console.log("install matic");
-      }
-
+      // Authenticate user
       if (!account) {
         throw new Error(
           "Connecting to chain failed, as no connected account was found"

@@ -26,9 +26,6 @@ const Sidebar = () => {
   return (
     <div className={styles.largerscreens}>
       <div className={styles.container} style={{ backgroundColor: "#192734" }}>
-        <div className={styles.title}>Blog-X</div>
-        <hr />
-        <br />
 
         <SidebarOptions
           option="Home"
@@ -70,10 +67,6 @@ const Sidebar = () => {
       >
         <div className={styles.logout}>Logout</div>
       </div>
-
-      <Link href="/BlogPage">
-        <div className={styles.publish}>Publish blog</div>
-      </Link>
     </div>
   );
 };
