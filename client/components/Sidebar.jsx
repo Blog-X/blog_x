@@ -26,7 +26,6 @@ const Sidebar = () => {
   return (
     <div className={styles.largerscreens}>
       <div className={styles.container} style={{ backgroundColor: "#192734" }}>
-        <div className={styles.title}>Blog-X</div>
         <hr />
         <br />
 
@@ -58,6 +57,7 @@ const Sidebar = () => {
           setSelected={setSelected}
           redirect="/"
         />
+        <hr />
       </div>
       <div
         className="logout"
