@@ -1,5 +1,9 @@
-import { BiSearch } from "react-icons/bi";
-import { news } from "../assests/static";
+import { BiSearch } from 'react-icons/bi'
+import { news } from '../Assests/static'
+import { useMoralis } from "react-moralis";
+import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import { useWeb3Transfer } from "react-moralis";
 
 
 const style = {
@@ -22,21 +26,106 @@ const style = {
     name: `font-bold`,
     handle: `text-[#8899a6]`,
     followButton: `bg-white text-black px-3 py-1 rounded-full text-xs font-bold`,
-};
+}
 
 function Widgets() {
+
+    const { Moralis, user, isInitialized, isWeb3Enabled } = useMoralis();
+    const [recieverId, setRecieverId] = useState("");
+    const [value, setValue] = useState(0);
+    const [currentUser, setCurrentUser] = useState(user);
+
+    useEffect(() => {
+        if (isInitialized) {
+            setCurrentUser(Moralis.User.current());
+        } else {
+            router.push('/');
+        }
+    }, []);
+
+
+    const router = useRouter();
+
+    const { fetch, error, isFetching } = useWeb3Transfer({
+        type: "native",
+        amount: Moralis.Units.ETH(value),
+        receiver: recieverId,
+    });
+
+    const transferMatics = async () => {
+        const amnt = value;
+        if (recieverId === currentUser.attributes.ethAddress) {
+            alert("You can't transfer to yourself");
+        }
+
+        if (amnt === null || amnt === 0) {
+            console.log("Enter a valid amount");
+            return;
+        }
+        setValue(amnt);
+
+        const options = {
+            type: "native",
+            amount: value,
+            receiver: recieverId,
+        }
+        if (!isWeb3Enabled) {
+            await Moralis.enableWeb3();
+        }
+        fetch({
+            onSuccess: () => {
+                alert("Transaction Successful");
+            },
+            oneError: (error) => {
+                console.log(error);
+            },
+            onComplete: () => {
+                console.log("Transaction Completed");
+            },
+            throwOnError: true,
+        });
+    }
 
     return (
         <div className={style.wrapper}>
             <div className={style.searchBar}>
                 <BiSearch className={style.searchIcon} />
                 <input
-                    placeholder="Search Blog-X"
-                    type="text"
+                    placeholder='Search Blog-X'
+                    type='text'
                     className={style.inputBox}
                 />
             </div>
-
+            <div className={style.section}>
+                <div className="matic-transfer-form">
+                    <div className="text-xl p-2 font-bold ">Transfer Ethers/Matics </div>
+                    <div className="form-input my-4">
+                        <div className='h-10'>
+                            <input type="text" className='bg-white rounded-md text-sm w-5/6 py-2 px-4 text-black font-bold' value={recieverId} onChange={(e) => {
+                                setRecieverId(e.target.value)
+                            }} placeholder="Enter reciever address" />
+                        </div>
+                        <br />
+                        <div className='h-10'>
+                            <input type="text" className='bg-white rounded-md text-sm w-5/6 py-2 px-4 text-black font-bold' value={value} onChange={(e) => {
+                                if (e.target.value === "") {
+                                    setValue(0);
+                                } else {
+                                    setValue(e.target.value)
+                                }
+                            }} placeholder="Enter amount" />
+                        </div>
+                        <br />
+                        <div className='h-10 w-1/2 m-auto'>
+                            <button className='bg-blue-500 text-white rounded-md text-xl w-full py-2 px-4 ' onClick={transferMatics}>Transfer </button>
+                        </div>
+                    </div>
+                </div>
+                <div className={style.showMore} onClick={() => {
+                    setRecieverId("");
+                    setValue(0);
+                }}>Reset all values</div>
+            </div>
             <div className={style.section}>
                 <div className={style.title}>What's happening</div>
                 {news.map((item, index) => (
@@ -57,7 +146,7 @@ function Widgets() {
                 <div className={style.showMore}>Show more</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Widgets;
+export default Widgets
