@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => (
     masterKey={process.env.NEXT_PUBLIC_MASTER_KEY}
   >
     <NotificationProvider>
-      <div className="layout overflow-x-hidden pt-4 bg-[#0e121e] overflow-x-hidden h-screen">
+      <div className="layout pt-4 bg-[#0e121e] overflow-x-hidden h-screen">
         <div className="">
           <Component {...pageProps} />
         </div>

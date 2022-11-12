@@ -1,10 +1,13 @@
 import { useMoralis } from "react-moralis";
 import Moralis from "moralis-v1";
 import { useState } from "react";
+import { ethers } from "ethers";
+
 
 export const ConnectButton = () => {
   const { authenticate, enableWeb3 } = useMoralis();
   const [authError, setAuthError] = useState(null);
+  const [error, setError] = useState("");
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   const handleAuth = async (provider) => {
@@ -15,6 +18,11 @@ export const ConnectButton = () => {
       // Enable web3 to get user address and chain
       await enableWeb3({ throwOnError: true, provider });
       const { account, chainId } = Moralis;
+
+      const { ethereum } = window
+      if (ethereum === undefined) {
+        console.log("install matic");
+      }
 
       if (!account) {
         throw new Error(

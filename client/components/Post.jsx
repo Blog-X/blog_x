@@ -1,12 +1,12 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./BcBlogs.module.css";
 import { Star, Copy, MessageCircle } from "@web3uikit/icons";
 import { BiTransfer } from "react-icons/bi";
+import styles from "./Post.module.css";
 
 const style = {
-    blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
+    blogs: `bg-[#fff] text-[#15202b]  rounded-lg shadow-md text-left mt-4 flex flex-col`,
     profile: `flex items-center flex-row p-2`,
     profilechars: `flex-1 text-md font-bold`,
     engage: `flex flex-row justify-between items-center pt-4 pb-1 hower:shadow-md`,
@@ -17,7 +17,7 @@ const Post = forwardRef(
     ({ displayName, text, personal, onClick }, ref) => {
 
         return (
-            <div key={blog._id} className={style.blogs}>
+            <div className={style.blogs}>
                 <div>
                     <div className={style.profile}>
                         <div className="flex-shrink-0">
@@ -41,12 +41,12 @@ const Post = forwardRef(
                         </div>
                     </div>
                     <div className={style.blogText}>
-                        <Link href={"/blog/" + blog.id} key={blog.id}>
-                            <div className={styles.blog_text}>
-                                {" "}
-                                {text}{" "}
-                            </div>
-                        </Link>
+
+                        <div className={styles.blog_text}>
+                            {" "}
+                            {text}{" "}
+                        </div>
+
                     </div>
                     <div className={style.engage}>
                         <div className="flex flex-row gap-2">
