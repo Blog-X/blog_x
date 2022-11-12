@@ -6,6 +6,7 @@ import { BiTransfer } from "react-icons/bi";
 import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { AiFillDelete } from 'react-icons/ai';
 import styles from "./Blogs.module.css";
 
 const style = {
