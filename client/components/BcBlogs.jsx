@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Star, Copy, Matic, MessageCircle } from "@web3uikit/icons";
 import { BsStars } from "react-icons/bs";
-import styles from "./BcBlogs.module.css";
 import { ethers } from "ethers";
 import { BlogXContractAddress } from "../context/address.js"
 import FlipMove from "react-flip-move";
 import axios from "axios";
 import BlogX from "../context/BlogXContract.json";
+import Post from "./Post";
 
 const style = {
     blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
