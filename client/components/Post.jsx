@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, Copy, MessageCircle } from "@web3uikit/icons";
 import { BiTransfer } from "react-icons/bi";
+import { AiFillDelete } from "react-icons/ai";
 import styles from "./Post.module.css";
 
 const style = {
@@ -60,6 +61,13 @@ const Post = forwardRef(
                             </div>
                             <div className="flex items-center gap-1">
                                 <BiTransfer className="w-5 h-5 text-green-400" />
+                            </div>
+                            <div className="flex items-center gap-1">
+                                {personal ? (
+                                    <AiFillDelete className="w-5 h-5 text-green-400"
+                                        onClick={onClick} />
+                                ) : ("")}
+
                             </div>
                         </div>
                         <div

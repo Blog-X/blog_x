@@ -119,9 +119,9 @@ const Blogs = ({ profile }) => {
                           );
                           alert(
                             "Copied to clipboard - " +
-                              asPath +
-                              "blogs/" +
-                              blog.id
+                            asPath +
+                            "blogs/" +
+                            blog.id
                           );
                         }}
                       />
@@ -130,7 +130,7 @@ const Blogs = ({ profile }) => {
                     <div className="flex items-center gap-1">
                       {profile && (
                         <AiFillDelete
-                          className="w-5 h-5"
+                          className="w-5 h-5  text-green-400"
                           onClick={() => {
                             const isDeletion = window.confirm(
                               "Are you sure you want to delete this blog?"
