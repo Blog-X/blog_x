@@ -146,7 +146,7 @@ function Widgets() {
         </div>
       </div>
       <div className={style.section}>
-        <div className={style.title}>What's happening</div>
+        <div className={style.title}>Whats happening</div>
         {news.map((item, index) => (
           <div key={index} className={style.item}>
             <div className={style.newsItemLeft}>
