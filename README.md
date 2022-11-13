@@ -7,3 +7,5 @@ Home page
 
 Publish blog page
 ![image](https://user-images.githubusercontent.com/92905626/201480929-b696cdf5-39ff-454f-a65c-fe13e536d565.png)
+Image showing delete button on blogs belonging to current user and meta mask pop up that comes up when ddelete button is pressed.
+![Untitled](https://user-images.githubusercontent.com/98473361/201509632-94fae375-9ba2-4184-beb8-1e4349e55161.png)
