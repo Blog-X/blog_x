@@ -88,4 +88,6 @@ const Post = forwardRef(
     }
 );
 
+Post.displayName = "Post";
+
 export default Post;

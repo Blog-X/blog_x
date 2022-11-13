@@ -1,7 +1,6 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
-import Head from "next/head";
-import Blogs from "../../components/home/Blogs";
+import Navbar from "../../components/Navbar";
 import { useMoralis } from "react-moralis";
 import Widgets from "../../components/Widgets";
 import { useRouter } from "next/router";
@@ -18,7 +17,7 @@ const styles = {
     "flex justify-between h-screen w-full text-center  text-white gap-0.5",
   sides: "basis-1/4 bg-slate-900 h-full overflow-y-auto",
   side2: "basis-3/4 bg-slate-900 h-full flex flex-row overflow-x-hidden  ",
-  feed: "basis-2/3 bg-slate-800 h-full overflow-x-hidden overflow-y-auto",
+  feed: "basis-2/3 bg-slate-800 h-full overflow-x-hidden overflow-y-auto px-4",
   widgets: "basis-1/3 bg-slate-900 h-full overflow-x-hidden overflow-y-auto",
   blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
   profile: `flex items-center flex-row p-2`,
@@ -94,7 +93,7 @@ const Details = () => {
       commentList = blog.get("BlogCommentsList");
       commentList.push(
         new UserComment(
-          User.attributes.name,
+          User.attributes.username,
           comments,
           Moralis.User.current().attributes.ethAddress
         )
@@ -109,6 +108,7 @@ const Details = () => {
 
   return (
     <div>
+    <Navbar />
       <div className={styles.wrapper}>
         <div className={styles.columns}>
           <div className={styles.sides}>
