@@ -8,6 +8,7 @@ import FlipMove from "react-flip-move";
 import axios from "axios";
 import BlogX from "../context/BlogXContract.json";
 import Post from "./Post";
+import Web3Modal from "web3modal";
 
 const style = {
   blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
@@ -54,21 +55,21 @@ const BcBlogs = () => {
 
   const getAllBlogs = async () => {
     try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const blogXContract = new ethers.Contract(
-          BlogXContractAddress,
-          BlogX.abi,
-          signer
-        );
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
 
-        let allBlogs = await blogXContract.getAllBlogs();
-        setPosts(getUpdatedPosts(allBlogs, ethereum.selectedAddress));
-      } else {
-        console.log("Matic object doesn't exist!");
-      }
+      const provider = new ethers.providers.Web3Provider(connection);
+      const signer = provider.getSigner();
+      const blogXContract = new ethers.Contract(
+        BlogXContractAddress,
+        BlogX.abi,
+        signer
+      );
+
+      let allBlogs = await blogXContract.getAllBlogs();
+      setPosts(getUpdatedPosts(allBlogs, ethereum.selectedAddress));
+
+
     } catch (error) {
       console.log(error);
     }
@@ -80,22 +81,21 @@ const BcBlogs = () => {
 
   const deletePost = (key) => async () => {
     try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const blogXContract = new ethers.Contract(
-          BlogXContractAddress,
-          BlogX.abi,
-          signer
-        );
 
-        let deleteBlogTX = await blogXContract.deleteBlog(key, true);
-        let allBlogs = await blogXContract.getAllBlogs();
-        setPosts(getUpdatedPosts(allBlogs, ethereum.selectedAddress));
-      } else {
-        console.log("Matic object doesn't exist!");
-      }
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
+      const signer = provider.getSigner();
+      const blogXContract = new ethers.Contract(
+        BlogXContractAddress,
+        BlogX.abi,
+        signer
+      );
+
+      let deleteBlogTX = await blogXContract.deleteBlog(key, true);
+      let allBlogs = await blogXContract.getAllBlogs();
+      setPosts(getUpdatedPosts(allBlogs, ethereum.selectedAddress));
+
     } catch (error) {
       console.log(error);
     }
@@ -114,7 +114,7 @@ const BcBlogs = () => {
                 personal={post.personal}
                 onClick={deletePost(post.id)}
               />
-            ))}
+            )).reverse()}
           </FlipMove>
         </div>
       </div>
