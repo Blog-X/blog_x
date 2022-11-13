@@ -10,3 +10,6 @@ Publish blog page
 
 Image showing delete button on blogs belonging to current user and meta mask pop up that comes up when ddelete button is pressed.
 ![Untitled](https://user-images.githubusercontent.com/98473361/201509736-02c933d0-effb-4e61-b583-c841d1e551e7.png)
+
+Image showing metamask popup when transfer button is clicked by inputting wallet address and amount to be donated
+![Untitled](https://user-images.githubusercontent.com/98473361/201509863-4b1acc70-98ff-4d88-a08d-d9ee510767c6.png)
