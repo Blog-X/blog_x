@@ -17,7 +17,7 @@ const Post = forwardRef(
     ({ displayName, text, personal, onClick }, ref) => {
 
         return (
-            <div className={style.blogs}>
+            <div className={style.blogs} >
                 <div>
                     <div className={style.profile}>
                         <div className="flex-shrink-0">
@@ -32,7 +32,9 @@ const Post = forwardRef(
                             />
                         </div>
                         <div className={style.profilechars}>
-                            <p className="font-bold">{displayName}</p>
+                            <p className="font-bold">{displayName.slice(0, 10) +
+                                "...." +
+                                displayName.slice(-4)}</p>
                             <p className="text-gray-500">
                                 {displayName.slice(0, 10) +
                                     "...." +
