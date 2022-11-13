@@ -1124,10 +1124,10 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.3.tgz"
   "version" "13.0.3"
 
-"@next/eslint-plugin-next@13.0.2":
-  "integrity" "sha512-W+fIIIaFU7Kct7Okx91C7XDRGolv/w2RUenX2yZFeeNVcuVzDIKUcNmckrYbYcwrNQUSXmtwrs3g8xwast0YtA=="
-  "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.0.2.tgz"
-  "version" "13.0.2"
+"@next/eslint-plugin-next@13.0.3":
+  "integrity" "sha512-slmTAHNKDyc7jhx4VF8lFbmOPWJ3PShtUUWpb6x9+ga59CyOxgP6AdcDhxfapnWYACKe/TwYiaveufu7LqXgZg=="
+  "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.0.3.tgz"
+  "version" "13.0.3"
   dependencies:
     "glob" "7.1.7"
 
@@ -1947,7 +1947,7 @@
   dependencies:
     "@types/node" "*"
 
-"@typescript-eslint/parser@^5.21.0":
+"@typescript-eslint/parser@^5.42.0":
   "integrity" "sha512-kAV+NiNBWVQDY9gDJDToTE/NO8BHi4f6b7zTsVAJoTkmB/zlfOpiEVBzHOKtlgTndCKe8vj9F/PuolemZSh50Q=="
   "resolved" "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.42.1.tgz"
   "version" "5.42.1"
@@ -4650,14 +4650,14 @@
   optionalDependencies:
     "source-map" "~0.2.0"
 
-"eslint-config-next@^13.0.2":
-  "integrity" "sha512-SrrHp+zBDYLjOFZdM5b9aW/pliK687Xxfa+qpDuL08Z04ReHhmz3L+maXaAqgrEVZHQximP7nh0El4yNDJW+CA=="
-  "resolved" "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-13.0.2.tgz"
-  "version" "13.0.2"
+"eslint-config-next@^13.0.3":
+  "integrity" "sha512-i2JoQP8gGv303GjXTonA27fm1ckRRkRoAP1WYEQgN0D2DDoFeBPqlJgHlMHnXKWjmNct/sW8jQEvy9am2juc8g=="
+  "resolved" "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-13.0.3.tgz"
+  "version" "13.0.3"
   dependencies:
-    "@next/eslint-plugin-next" "13.0.2"
+    "@next/eslint-plugin-next" "13.0.3"
     "@rushstack/eslint-patch" "^1.1.3"
-    "@typescript-eslint/parser" "^5.21.0"
+    "@typescript-eslint/parser" "^5.42.0"
     "eslint-import-resolver-node" "^0.3.6"
     "eslint-import-resolver-typescript" "^2.7.1"
     "eslint-plugin-import" "^2.26.0"
