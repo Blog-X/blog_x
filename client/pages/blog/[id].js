@@ -9,8 +9,10 @@ import Image from "next/image";
 import { Star, Copy, MessageCircle } from "@web3uikit/icons";
 import { BiTransfer } from "react-icons/bi";
 import { useState } from "react";
+import styles from "./id.module.css";
 
-const styles = {
+
+const style = {
   wrapper:
     "flex justify-center items-center h-screen w-screen bg-[#0f172a] text-white overflow-x-hidden",
   columns:
@@ -109,17 +111,17 @@ const Details = () => {
   return (
     <div>
     <Navbar />
-      <div className={styles.wrapper}>
-        <div className={styles.columns}>
-          <div className={styles.sides}>
+      <div className={style.wrapper}>
+        <div className={style.columns}>
+          <div className={style.sides}>
             <Sidebar />
           </div>
-          <div className={styles.side2}>
-            <div className={styles.feed}>
+          <div className={style.side2}>
+            <div className={style.feed}>
               <br />
-              <div className={styles.blogs}>
+              <div className={style.blogs}>
                 <div>
-                  <div className={styles.profile}>
+                  <div className={style.profile}>
                     <div className="flex-shrink-0">
                       <Image
                         className="rounded-full"
@@ -133,7 +135,7 @@ const Details = () => {
                         height={40}
                       />
                     </div>
-                    <div className={styles.profilechars}>
+                    <div className={style.profilechars}>
                       <p className="font-bold">{b && b.attributes.UserName}</p>
 
                       <p className="text-gray-500">
@@ -141,15 +143,15 @@ const Details = () => {
                       </p>
                     </div>
                   </div>
-                  <div className={styles.blogText}>
-                    <div className={styles.blogText}>
+                  <div className={style.blogText}>
+                    <div className={styles.blog_text}>
                       {" "}
                       {b && b.attributes.blogTxt}{" "}
                     </div>
 
                     <img src={b && b.attributes.blogImg} alt="" />
                   </div>
-                  <div className={styles.engage}>
+                  <div className={style.engage}>
                     <div className="flex flex-row gap-2">
                       <div className="flex items-center gap-1">
                         <Star
@@ -280,7 +282,7 @@ const Details = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.widgets}>
+            <div className={style.widgets}>
               <Widgets />
             </div>
           </div>
