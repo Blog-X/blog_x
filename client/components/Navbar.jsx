@@ -44,14 +44,14 @@ const Navbar = (currentPage = "home") => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="sticky top-0 left-0 w-screen mb-1 ease-in duration-300 bg-[#0e121e] z-50 py-1"
+      className="sticky top-0 left-0 w-screen mb-1 ease-in duration-300 bg-[#0e121e] z-50 py-1 mb-2"
     >
       <div className="max-w-full h-25 bg-[#0e121e] flex flex-row items-center text-white">
-        <div className="basis-1/3 flex flex-row justify-center">
-          <Link href="/" className="basis-5/6 p-4 text-center">
+        <div className="basis-1/2 flex flex-row justify-center">
+          <Link href="/" className="sm:basis-5/6 p-4 text-center">
             <h1
               style={{ color: `${textColor}` }}
-              className="text-2xl font-bold hover:underline cursor-pointer  hover:font-bold"
+              className="text-xl sm:text-2xl font-bold hover:underline cursor-pointer  hover:font-bold"
             >
               Blog-X
             </h1>
@@ -60,7 +60,7 @@ const Navbar = (currentPage = "home") => {
 
         <div
           style={{ color: `${textColor}` }}
-          className="hidden sm:flex w-screen"
+          className="sm:flex w-screen"
         >
           {/* <div className="p-4">
             <div className="flex items-center bg-[#243340] p-2 rounded-3xl">
@@ -72,7 +72,7 @@ const Navbar = (currentPage = "home") => {
               />
             </div>
           </div> */}
-          <div className="text-xl  text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full basis-2/3 my-2.5 mx-auto justify-center">
+          <div className="text-xl text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-40 sm:basis-2/3 my-2.5 mx-auto justify-center">
             <Link href="/BlogPage">Publish Blog</Link>
           </div>
         </div>
@@ -83,13 +83,13 @@ const Navbar = (currentPage = "home") => {
             </div>
           </div>
           <div className="cursor-pointer flex items-center hover:border border-gray-500 rounded-[0.4rem] p-1 px-3 mx-4 group">
-            <CiUser className="w-[1.5rem] h-[1.5rem] sm:w-[1.2rem] hover:h-[1.2rem] text-gray-500 " />
+            <CiUser className="w-[1.5rem] h-[1.5rem] lg:w-[1.2rem] hover:h-[1.2rem] text-gray-500 " />
             <MdKeyboardArrowDown className="group-hover:w-[1rem]  group-hover:h-[1rem] text-gray-500" />
           </div>
         </div>
 
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <div onClick={handleNav} className="block px-6 lg:hidden z-10">
           {nav ? (
             <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
           ) : (
@@ -100,8 +100,8 @@ const Navbar = (currentPage = "home") => {
         <div
           className={
             nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "lg:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              : "lg:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
           }
         >
           <ul>
@@ -115,7 +115,13 @@ const Navbar = (currentPage = "home") => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/Bcblogs">Blockchain feed</Link>
+              <Link href="/walletTransfer">Transfer tokens</Link>
+            </li>
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <Link href="/bcblogspage">Blockchain feed</Link>
             </li>
             <li
               onClick={handleNav}
@@ -123,7 +129,7 @@ const Navbar = (currentPage = "home") => {
             >
               <Link href="/profile">Profile</Link>
             </li>
-            <li
+            {/* <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
@@ -135,7 +141,7 @@ const Navbar = (currentPage = "home") => {
                   className="bg-transparent outline-none"
                 />
               </div>
-            </li>
+            </li> */}
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"

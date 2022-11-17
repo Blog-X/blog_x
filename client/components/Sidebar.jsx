@@ -5,6 +5,7 @@ import SidebarOptions from "./SidebarOptions";
 import Link from "next/link";
 import { useMoralis } from "react-moralis";
 import { useRouter } from "next/router";
+import Widgets from "./Widgets";
 
 const styles = {
   container: "py-4 px-10 bg-gray-50 rounded-2xl h-full w-3/4 m-auto mt-4",
@@ -57,6 +58,9 @@ const Sidebar = () => {
           redirect="/"
         />
         <hr />
+      </div>
+      <div className="hidden md:inline lg:hidden">
+        <Widgets />
       </div>
       <div
         className="logout"

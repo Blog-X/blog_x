@@ -85,14 +85,14 @@ function Widgets() {
 
   return (
     <div className={style.wrapper}>
-      <div className={style.searchBar}>
+      {/* <div className={style.searchBar}>
         <BiSearch className={style.searchIcon} />
         <input
           placeholder="Search Blog-X"
           type="text"
           className={style.inputBox}
         />
-      </div>
+      </div> */}
       <div className={style.section}>
         <div className="matic-transfer-form">
           <div className="text-xl p-2 font-bold ">Transfer Ethers/Matics </div>
