@@ -6,7 +6,7 @@ const styles = {
     "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg text-white hover:bg-gray-100 hover:bg-gray-700",
   inactive:
     "hover:bg-slate-700 font-normal hover:font-bold py-2 text-lg rounded-2xl text-white",
-  active: "bg-cyan-700 font-bold py-2 rounded-2xl px-4 text-lg text-white",
+  active: "bg-cyan-700 font-bold py-2 rounded-2xl px-2 lg:px-4 lg:text-lg text-white",
   icon: "flex-shrink-0 w-10 text-gray-500 transition duration-75 text-gray-400 group-hover:text-gray-900 group-hover:text-white",
 };
 
