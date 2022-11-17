@@ -1,11 +1,16 @@
 import React from 'react'
 import Widgets from '../components/Widgets'
+import Navbar from '../components/Navbar'
 
 const WalletTransfer = () => {
   return (
-    <div className='sm:inline hidden'>
-        <Widgets />
-    </div>
+    <>
+        <Navbar />
+        <div className='lg:hidden inline'>
+            <Widgets />
+        </div>
+    </>
+    
   )
 }
 

@@ -51,7 +51,7 @@ const Navbar = (currentPage = "home") => {
           <Link href="/" className="sm:basis-5/6 p-4 text-center">
             <h1
               style={{ color: `${textColor}` }}
-              className="text-2xl sm:text-2xl font-bold hover:underline cursor-pointer  hover:font-bold"
+              className="text-xl sm:text-2xl font-bold hover:underline cursor-pointer  hover:font-bold"
             >
               Blog-X
             </h1>
@@ -72,7 +72,7 @@ const Navbar = (currentPage = "home") => {
               />
             </div>
           </div> */}
-          <div className="text-xl text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full basis:1/2 sm:basis-2/3 my-2.5 mx-auto justify-center">
+          <div className="text-xl text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-40 sm:basis-2/3 my-2.5 mx-auto justify-center">
             <Link href="/BlogPage">Publish Blog</Link>
           </div>
         </div>
