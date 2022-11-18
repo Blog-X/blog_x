@@ -72,11 +72,12 @@ const Navbar = (currentPage = "home") => {
               />
             </div>
           </div> */}
-          <div className="text-xl text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-40 sm:basis-2/3 my-2.5 mx-auto justify-center">
-            <Link href="/BlogPage">Publish Blog</Link>
+          <div className="text-xl text-center font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-40 sm:w-full sm:basis-1/2 my-2.5 mx-auto justify-center">
+            <Link href="/BlogPage" className="hidden lg:inline">Click here to Publish a Blog</Link>
+            <Link href="/BlogPage" className="inline lg:hidden">Publish Blog</Link>
           </div>
         </div>
-        <div className="hidden sm:flex p-4 basis-1/3 justify-between">
+        <div className="hidden sm:flex p-4 basis-1/2 justify-between">
           <div className="">
             <div className="cursor-pointer text-xl flex items-center hover:border border-gray-500 rounded-[0.4rem] p-1 group ">
               {mapping[page]}
