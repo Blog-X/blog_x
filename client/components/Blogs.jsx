@@ -43,9 +43,18 @@ const Blogs = ({ profile }) => {
   const refreshData = () => router.replace(router.asPath);
 
   const incrementLikes = async (id) => {
+    if (currentUser == null) {
+      alert("Please Login to like the post or reload the page.");
+      return;
+    }
+
     const Blogs = Moralis.Object.extend("Blogs");
     const query = new Moralis.Query(Blogs);
     const blog = await query.get(id);
+    if (blog.attributes.UserAccount == currentUser.attributes.ethAddress) {
+      alert("You cannot like your own post.");
+      return;
+    }
     blog.increment("Likes");
     await blog.save();
     refreshData();
@@ -115,12 +124,12 @@ const Blogs = ({ profile }) => {
                         className="w-5 h-5 text-green-400"
                         onClick={() => {
                           navigator.clipboard.writeText(
-                            asPath + "blogs/" + blog.id
+                            asPath + "blog/" + blog.id
                           );
                           alert(
                             "Copied to clipboard - " +
                             asPath +
-                            "blogs/" +
+                            "blog/" +
                             blog.id
                           );
                         }}
