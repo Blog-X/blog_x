@@ -110,10 +110,21 @@ const Details = () => {
                         height={40}
                       />
                     </div>
+                    <div className={style.profilechars}>
+                      <p className="font-bold">
+                        {post[asPath.split("/")[2]] &&
+                          post[asPath.split("/")[2]].username.slice(0, 6) +
+                            "..." +
+                            post[asPath.split("/")[2]].username.slice(-4)}
+                      </p>
+                    </div>
                   </div>
                   <div className={style.blogText}>
                     <div className={styles.blog_text}>
-                      {post[asPath.split("/")[2]].blogText}
+                      {" " +
+                        (post[asPath.split("/")[2]] &&
+                          post[asPath.split("/")[2]].blogText) +
+                        " "}
                     </div>
                   </div>
                   <div className={style.engage}>

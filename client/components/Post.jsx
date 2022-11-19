@@ -49,9 +49,11 @@ const Post = forwardRef(
                         <Link href={"/bcblogs/" + postkey} key={postkey}>
                             <div className={styles.blog_text}>
                                 {" "}
-                                {text}{" "}
+                                {text && text.slice(0, 80) + (text.length > 200 ? " ..." : " ")}{" "}
                             </div>
-
+                            <div>
+                                <p className="text-blue-500 text-xs text-right">Read More</p>
+                            </div>
                         </Link>
 
                     </div>

@@ -83,7 +83,7 @@ const Blogs = ({ profile }) => {
                   <div className={style.profilechars}>
                     <p className="font-bold">{blog.attributes.UserName}</p>
                     <p className="text-gray-500">
-                      {blog.attributes.UserAccount.slice(0, 10) +
+                      {blog.attributes.UserAccount.slice(0, 6) +
                         "...." +
                         blog.attributes.UserAccount.slice(-4)}
                     </p>
@@ -91,9 +91,13 @@ const Blogs = ({ profile }) => {
                 </div>
                 <div className={style.blogText}>
                   <Link href={"/blog/" + blog.id} key={blog.id}>
+
                     <div className={styles.blog_text}>
                       {" "}
-                      {blog.attributes.blogTxt}{" "}
+                      {blog.attributes.blogTxt && blog.attributes.blogTxt.slice(0, 200) + (blog.attributes.blogTxt.length > 200 ? " ..." : " ")}{" "}
+                      <div>
+                        <p className="text-blue-500 text-xs text-right">Read More</p>
+                      </div>
                     </div>
                   </Link>
 
