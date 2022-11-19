@@ -29,10 +29,10 @@ const Navbar = (currentPage = "home") => {
   useEffect(() => {
     const changeColor = () => {
       if (window.scrollY >= 90) {
-        setColor("#222433");
+        setColor("");
         setTextColor("#0e121e");
       } else {
-        setColor("#222433");
+        setColor("");
         setTextColor("#ffffff");
       }
     };
@@ -44,9 +44,9 @@ const Navbar = (currentPage = "home") => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="sticky top-0 left-0 w-screen ease-in duration-300 bg-[#222433] z-50 py-1 mb-2"
+      className="sticky top-0 left-0 w-screen ease-in duration-300 bg-[] z-50 py-1 mb-2"
     >
-      <div className="max-w-full h-25 bg-[#222433] flex flex-row items-center text-white">
+      <div className="max-w-full h-25 bg-[] flex flex-row items-center text-white">
         <div className="basis-1/2 flex flex-row justify-center">
           <Link href="/" className="sm:basis-5/6 p-4 text-center">
             <h1
@@ -101,8 +101,8 @@ const Navbar = (currentPage = "home") => {
         <div
           className={
             nav
-              ? "lg:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[#222433] text-center ease-in duration-300"
-              : "lg:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[#222433] text-center ease-in duration-300"
+              ? "lg:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[] text-center ease-in duration-300"
+              : "lg:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[] text-center ease-in duration-300"
           }
         >
           <ul>
