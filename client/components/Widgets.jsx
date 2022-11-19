@@ -4,6 +4,7 @@ import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useWeb3Transfer } from "react-moralis";
+import DynamicWidgets from "./DynamicWidgets";
 
 const style = {
   wrapper: `flex-[1] p-4 font-normal overflow-y-auto`,
@@ -147,7 +148,7 @@ function Widgets() {
       </div>
       <div className={style.section}>
         <div className={style.title}>Whats happening</div>
-        {news.map((item, index) => (
+        {/* {news.map((item, index) => (
           <div key={index} className={style.item}>
             <div className={style.newsItemLeft}>
               <div className={style.newsItemCategory}>{item.category}</div>
@@ -162,7 +163,8 @@ function Widgets() {
             </div>
           </div>
         ))}
-        <div className={style.showMore}>Show more</div>
+        <div className={style.showMore}>Show more</div> */}
+        <DynamicWidgets />
       </div>
     </div>
   );

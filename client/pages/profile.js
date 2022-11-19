@@ -16,7 +16,7 @@ const styles = {
     "flex justify-between h-screen w-full text-center  text-white gap-0.5",
   sides: "basis-1/4 bg-slate-900 h-full overflow-y-auto",
   side2: "basis-3/4 bg-slate-900 h-full flex flex-row overflow-x-hidden  ",
-  feed: "basis-2/3 bg-slate-800 h-full overflow-x-hidden overflow-y-auto px-4",
+  feed: "basis-2/3 bg-slate-800 h-full overflow-x-hidden overflow-y-auto px-4 no-scrollbar",
   widgets: "basis-1/3 bg-slate-900 h-full overflow-x-hidden overflow-y-auto",
   banner: "h-64 w-full bg-slate-900",
   pfpContainer:
@@ -26,11 +26,11 @@ const styles = {
   profileName: "w-1/4 text-2xl font-bold ml-2 mt-2",
   profileWallet: "w-1/4 text-sm font-light ml-2 ",
   profileEdit:
-    " text-bold   border-2 border-sky-500 rounded-full p-3  m-2  float-right  transform -translate-y-10 -mt-20 mr-5",
+    " text-bold  border-2 border-sky-500 rounded-full p-3  m-2  float-right  transform -translate-y-10 -mt-20 mr-5",
   profileBio: "w-1/4 ext-sm ml-1 pt-2 pb-1",
   profileTabs:
-    " text-sm font-bold bg-slate-900 overflw-x-hidden overflow-y-auto",
-  profileTab: "  h-full text-sm font-bold",
+    "text-sm w-full font-bold bg-slate-900 overflw-x-hidden overflow-y-auto",
+  profileTab: "no-scrollbar h-full text-sm font-bold",
 };
 
 export default function Profile() {
