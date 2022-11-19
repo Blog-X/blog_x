@@ -104,9 +104,9 @@ const BcBlogs = () => {
   return (
     <div className="bg-slate-800 pb-4">
       <div className={style.wrapper}>
-        <div>
+        <div key={j}>
           <FlipMove>
-            {post.map((post, i) => (
+            {post.map((post, i, j) => (
               <Post
                 postkey={i}
                 displayName={post.username}
