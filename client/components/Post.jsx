@@ -5,6 +5,7 @@ import { Star, Copy, MessageCircle } from "@web3uikit/icons";
 import { BiTransfer } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import styles from "./Post.module.css";
+import Id from "../pages/bcblogs/[id]";
 
 const style = {
     blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
@@ -15,7 +16,7 @@ const style = {
 };
 
 const Post = forwardRef(
-    ({ displayName, text, personal, onClick }, ref) => {
+    ({ displayName, text, personal, onClick, postkey }, ref) => {
 
         return (
             <div className={style.blogs} >
@@ -45,10 +46,13 @@ const Post = forwardRef(
                     </div>
                     <div className={style.blogText}>
 
-                        <div className={styles.blog_text}>
-                            {" "}
-                            {text}{" "}
-                        </div>
+                        <Link href={"/bcblogs/" + postkey} key={postkey}>
+                            <div className={styles.blog_text}>
+                                {" "}
+                                {text}{" "}
+                            </div>
+
+                        </Link>
 
                     </div>
                     <div className={style.engage}>
