@@ -107,14 +107,16 @@ const BcBlogs = () => {
         <div key={j}>
           <FlipMove>
             {post.map((post, i, j) => (
-              <Post
-                postkey={i}
-                displayName={post.username}
-                text={post.blogText}
-                personal={post.personal}
-                onClick={deletePost(post.id)}
+              <div key={j}>
+                <Post
+                  postkey={i}
+                  displayName={post.username}
+                  text={post.blogText}
+                  personal={post.personal}
+                  onClick={deletePost(post.id)}
 
-              />
+                />
+              </div>
             )).reverse()}
           </FlipMove>
         </div>
