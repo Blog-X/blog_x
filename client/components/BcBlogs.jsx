@@ -104,17 +104,18 @@ const BcBlogs = () => {
   return (
     <div className="bg-slate-800 pb-4">
       <div className={style.wrapper}>
-        <div key={j}>
+        <div>
           {post.map((post, i, j) => (
-
-            <Post
-              postkey={i}
-              displayName={post.username}
-              text={post.blogText}
-              personal={post.personal}
-              onClick={deletePost(post.id)}
-              key={i}
-            />
+            <div key={i}>
+              <Post
+                postkey={i}
+                displayName={post.username}
+                text={post.blogText}
+                personal={post.personal}
+                onClick={deletePost(post.id)}
+                key={i}
+              />
+            </div>
           )).reverse()}
         </div>
       </div>
