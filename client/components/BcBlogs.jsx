@@ -105,20 +105,17 @@ const BcBlogs = () => {
     <div className="bg-slate-800 pb-4">
       <div className={style.wrapper}>
         <div key={j}>
-          <FlipMove>
-            {post.map((post, i, j) => (
-              <div key={j}>
-                <Post
-                  postkey={i}
-                  displayName={post.username}
-                  text={post.blogText}
-                  personal={post.personal}
-                  onClick={deletePost(post.id)}
+          {post.map((post, i, j) => (
 
-                />
-              </div>
-            )).reverse()}
-          </FlipMove>
+            <Post
+              postkey={i}
+              displayName={post.username}
+              text={post.blogText}
+              personal={post.personal}
+              onClick={deletePost(post.id)}
+              key={i}
+            />
+          )).reverse()}
         </div>
       </div>
     </div>
