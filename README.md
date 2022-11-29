@@ -1,15 +1,9 @@
-# blog-x
-Login Page
-![image](https://user-images.githubusercontent.com/92905626/201479925-c6742dbe-67a1-48a7-89c7-299991d3b658.png)
+# BLOG-X
 
-Home page
-![image](https://user-images.githubusercontent.com/92905626/201479958-e469fe1a-cb29-4b39-9aa7-a9eb0fe10072.png)
+Traditional social media platforms are waiting for their web3 moment now. Decentralized social media platforms are like the original Internet—globally distributed and unowned where organization can't suppress the voice of people under their fabricated ideology of Hate Speech/Sensitivity.
 
-Publish blog page
-![image](https://user-images.githubusercontent.com/92905626/201480929-b696cdf5-39ff-454f-a65c-fe13e536d565.png)
+We present to you "Blog-X: A Secure Decentralized Social Media Platform," a product that focuses largely on free expression and individual integrity.
 
-Image showing delete button on blogs belonging to current user and meta mask pop up that comes up when ddelete button is pressed.
-![Untitled](https://user-images.githubusercontent.com/98473361/201509736-02c933d0-effb-4e61-b583-c841d1e551e7.png)
+Blog-X is a decentralized social media platform, which does not store user data like email addresses or phone numbers thus making them completely anonymous, and stores all user interactions on a blockchain. This improves accountability and data security. Since the data uploaded by the users is stored on a decentralized network, the issues related to a data breach, and biased censorship are solved. Our anonymous users will have to pay a small fee(this is normal fee that is charged for decentralised transactions) to enjoy this freedom and other good things. Through low fees, Blog-X makes uploading media on blockchain affordable for users.
 
-Image showing metamask popup when transfer button is clicked by inputting wallet address and amount to be donated
-![Untitled](https://user-images.githubusercontent.com/98473361/201509863-4b1acc70-98ff-4d88-a08d-d9ee510767c6.png)
+We're about to enter the Metaverse, where users will focus on hundreds of interfaces built on top of several combined protocols owned by the inhabitants of the metaverse. As a result, Blog-X will scale to large limits in the near future.
