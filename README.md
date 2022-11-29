@@ -1,4 +1,4 @@
-<img src="\client\public\brandLogo_removebg.png" alt="The BlogX logo" width="736"/> </br></br>
+![brandLogo_removebg2](https://user-images.githubusercontent.com/98473361/204555863-6202a04e-b060-4b34-8acd-dd38ac3512a4.png)
 
 # BLOGX
 
