@@ -2,6 +2,7 @@ import { WorldIDWidget } from "@worldcoin/id";
 import Head from "next/head";
 import { useMoralis } from "react-moralis";
 import HomeComp from "../components/HomeComp";
+import LoginComp2 from "../components/LoginComp2";
 import LoginComp from "../components/LoginComp";
 
 export default function Home() {
@@ -14,7 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {isAuthenticated ? <HomeComp /> : <LoginComp />}
+        {isAuthenticated ? <HomeComp /> : <LoginComp2 />}
+        {/* {isAuthenticated ?  : <LoginComp2 />} */}
+        {/* {<LoginComp />} */}
         <div
           className="logout"
           onClick={() => {

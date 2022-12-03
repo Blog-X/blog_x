@@ -80,6 +80,7 @@ const Blogs = ({ profile }) => {
                       height={40}
                     />
                   </div>
+                  <Link href={"/profile/" + blog.attributes.UserAccount} key={blog.UserAccount}>
                   <div className={style.profilechars}>
                     <p className="font-bold">{blog.attributes.UserName}</p>
                     <p className="text-gray-500">
@@ -88,6 +89,7 @@ const Blogs = ({ profile }) => {
                         blog.attributes.UserAccount.slice(-4)}
                     </p>
                   </div>
+                  </Link>
                 </div>
                 <div className={style.blogText}>
                   <Link href={"/blog/" + blog.id} key={blog.id}>

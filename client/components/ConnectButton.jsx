@@ -2,6 +2,8 @@ import { useMoralis } from "react-moralis";
 import Moralis from "moralis-v1";
 import { useState } from "react";
 import { ethers } from "ethers";
+import Router from "next/router";
+import { useRouter } from "next/router";
 
 
 export const ConnectButton = () => {
@@ -9,6 +11,7 @@ export const ConnectButton = () => {
   const [authError, setAuthError] = useState(null);
   const [error, setError] = useState("");
   const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const router = useRouter();
 
   const handleAuth = async (provider) => {
     try {
@@ -47,6 +50,9 @@ export const ConnectButton = () => {
       setAuthError(error);
     } finally {
       setIsAuthenticating(false);
+    }
+    if (authenticate) {
+      router.push('/worldid')
     }
   };
 
