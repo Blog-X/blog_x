@@ -10,7 +10,7 @@ const Userverification = () => {
     //const ctx = useContext(AppContext);
     const router = useRouter();
     return (
-        <div style={{ margin: "15% 37%" }}>
+        <div>
             {" "}
             <WorldIDWidget
                 actionId="wid_staging_f88db2e1c34a9e9cd1604669027af4b5" // obtain this from developer.worldcoin.org

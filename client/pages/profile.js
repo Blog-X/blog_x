@@ -124,7 +124,7 @@ export default function Profile() {
                     <Link href="/ProfileSettings">
                       <div className={styles.profileEdit}>Edit Profile</div>
                     </Link>
-
+                    
                     {/* <Link></Link> */}
                     <div className={styles.profileBio}>
                       {" "}
