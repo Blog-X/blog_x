@@ -49,7 +49,7 @@ export default function ProfileSlug() {
             if (isInitialized) {
                 console.log("Moralis initialized");
                 // setCurrentUser(Moralis.User.current());
-                const Users = Moralis.Object.extend("User");
+                const Users = Moralis.Object.extend("_User");
                 const query = new Moralis.Query(Users);
                 const user = await query.get(currentId);
                 setCurrentUser(user);
@@ -105,7 +105,59 @@ export default function ProfileSlug() {
                 </Head>
                 <main>
                     <Navbar />
+                    <div className={styles.wrapper}>
+                        <div className={styles.columns}>
+                            <div className={styles.sides}>
+                                <Sidebar />
+                            </div>
 
+                            <div className={styles.side2}>
+                                <div className={styles.feed}>
+                                    <img
+                                        src={
+                                            currentUser.attributes.banner
+                                                ? currentUser.attributes.banner
+                                                : defaultImgs[1]
+                                        }
+                                        className={styles.banner}
+                                    />
+                                    <div className={styles.pfpContainer}>
+                                        <img src={defaultImgs[0]} className={styles.profilePFP} />
+                                        <div className={styles.profileName}>
+                                            {currentUser.attributes.username}
+                                        </div>
+                                        <div className={styles.profileWallet}>
+                                            @{" "}
+                                            {currentUser.attributes.ethAddress.slice(0, 6) === "0x"
+                                                ? currentUser.attributes.ethAddress.slice(0, 6)
+                                                : currentUser.attributes.ethAddress.slice(0, 10) +
+                                                "..." +
+                                                currentUser.attributes.ethAddress.slice(-4)}
+                                        </div>
+
+                                        <Link href="/ProfileSettings">
+                                            <div className={styles.profileEdit}>Edit Profile</div>
+                                        </Link>
+
+                                        {/* <Link></Link> */}
+                                        <div className={styles.profileBio}>
+                                            {" "}
+                                            {currentUser.attributes.bio
+                                                ? currentUser.attributes.bio
+                                                : "This is a bio"}
+                                        </div>
+                                    </div>
+                                    <div className={styles.profileTabs}>
+                                        <div className={styles.profileTab}>Blogs</div>
+                                        <Blogs profile={true} />
+                                    </div>
+                                </div>
+                                <div className={styles.widgets}>
+                                    <Widgets />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
             </>
         );
