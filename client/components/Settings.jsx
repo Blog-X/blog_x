@@ -34,6 +34,18 @@ const Settings = (props) => {
   const [bannerUrl, setBannerUrl] = useState("");
   const router = useRouter();
 
+  const followerIncrement = async (slugUser) => {
+    const follower = Moralis.User.current();
+    if (slugUser == null || slugUser == follower) {
+      return 1
+    }
+    const user = await new Moralis.Query(Moralis.User).get(slugUser);
+    const follower_array = user.get("followerList");
+    follower_array.push(follower);
+    user.set("followerList", follower_array)
+    await user.save();
+  };
+
   const onBannerClick = () => {
     inputFile.current.click();
   };
@@ -55,6 +67,7 @@ const Settings = (props) => {
     userDetails.set("username", username);
     userDetails.set("bio", bio);
     userDetails.set("pfp", selectedPFP);
+    userDetails.set("followerList", [])
 
     if (file) {
       const url = await uploadImg(file, setBannerUrl);
