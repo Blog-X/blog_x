@@ -173,7 +173,7 @@ const Blogs = ({ profile }) => {
                     onClick={() => {
                       navigator.clipboard.writeText(
                         blog.attributes.UserAccount
-                      );
+                      );  
                       alert("Copied to clipboard!");
                     }}
                   >
@@ -181,7 +181,7 @@ const Blogs = ({ profile }) => {
                   </div>
                 </div>
                 <div>
-                  <p>{blog.attributes.createdAt.toDateString()}</p>
+                  {/* <p>{blog.attributes.createdAt.toDateString()}</p> */}
                 </div>
               </div>
             </div>

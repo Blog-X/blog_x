@@ -1,6 +1,6 @@
 import React from "react";
-import { ConnectButton } from "./ConnectButton";
-
+// import { ConnectButton } from "./ConnectButton";
+import WorldIdCheck from "../components/WorldIdCheck"
 const LoginComp = () => {
   return (
     <div className="flex flex-col sm:flex-row">
@@ -15,11 +15,12 @@ const LoginComp = () => {
           />
         </div>
         <div className="">
-          <ConnectButton />
+          <WorldIdCheck />
+          {/* <ConnectButton /> */}
         </div>
-        <div className="py-4 px-2 bg-[#fff3cd] text-black mt-8 mx-4 rounded-3xl">
-        You will require <b>Metamask</b>  to Log into our Platform.
-      </div>
+        {/* <div className="py-4 px-2 bg-[#fff3cd] text-black mt-8 mx-4 rounded-3xl">
+          You will require <b>Metamask</b>  to Log into our Platform.
+        </div> */}
       </div>
       <div className="basis-1/3 text-center"></div>
     </div>
