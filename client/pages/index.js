@@ -1,3 +1,4 @@
+import { WorldIDWidget } from "@worldcoin/id";
 import Head from "next/head";
 import { useMoralis } from "react-moralis";
 import HomeComp from "../components/HomeComp";
