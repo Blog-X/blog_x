@@ -49,8 +49,10 @@ export default function ProfileSlug() {
             if (isInitialized) {
                 console.log("Moralis initialized");
                 // setCurrentUser(Moralis.User.current());
-                const Users = Moralis.Object.extend("_User");
-                const query = new Moralis.Query(Users);
+                const User = await Moralis.Object.extend("_User");
+                const query = new Moralis.Query(User); // create a new query
+                console.log(query);
+                query.equalTo("ethAddress", currentId);
                 const user = await query.get(currentId);
                 setCurrentUser(user);
                 console.log("Current user: ", currentUser);

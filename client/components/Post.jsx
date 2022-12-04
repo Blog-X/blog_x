@@ -6,6 +6,9 @@ import { BiTransfer } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import styles from "./Post.module.css";
 import Id from "../pages/bcblogs/[id]";
+import { SlUserFollow } from "react-icons/sl";
+import { Chat } from "@pushprotocol/uiweb";
+
 
 const style = {
     blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
@@ -58,7 +61,7 @@ const Post = forwardRef(
 
                     </div>
                     <div className={style.engage}>
-                        <div className="flex flex-row gap-2">
+                        <div className="flex flex-row gap-4">
                             <div className="flex items-center gap-1">
                                 <Star className="w-5 h-5 text-yellow-400" />
                             </div>
@@ -74,6 +77,9 @@ const Post = forwardRef(
                                         onClick={onClick} />
                                 ) : ("")}
 
+                            </div>
+                            <div className="flex items-center gap1">
+                                <SlUserFollow className="w-5 h-5 text-green-400" />
                             </div>
                         </div>
                         <div

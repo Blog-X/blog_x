@@ -1,11 +1,15 @@
 import React from "react";
-import { useState } from "react";
+
 import { List, Home, User, Phone } from "@web3uikit/icons";
 import SidebarOptions from "./SidebarOptions";
 import Link from "next/link";
 import { useMoralis } from "react-moralis";
 import { useRouter } from "next/router";
 import Widgets from "./Widgets";
+import { Chat } from "@pushprotocol/uiweb";
+import ChatNew from "../components/ChatNew";
+
+import {useState, useContext} from "react";
 
 const styles = {
   container: "py-4 px-10 bg-gray-50 rounded-2xl h-full w-3/4 m-auto mt-4",
@@ -57,6 +61,14 @@ const Sidebar = () => {
           setSelected={setSelected}
           redirect="/"
         />
+        <SidebarOptions
+          option="Contact Us"
+          Icon={Phone}
+          isActive={Boolean(selected === "Contact Us")}
+          setSelected={setSelected}
+          redirect="/"
+        />
+        <ChatNew/>
         <hr />
       </div>
       <div className="hidden md:inline lg:hidden">

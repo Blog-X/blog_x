@@ -9,6 +9,7 @@ import axios from "axios";
 import BlogX from "../context/BlogXContract.json";
 import Post from "./Post";
 import Web3Modal from "web3modal";
+import { useMoralis } from "react-moralis";
 
 const style = {
   blogs: `bg-[#fff] text-[#15202b] p-4 rounded-lg shadow-md text-left mt-4 flex flex-col`,
@@ -23,7 +24,8 @@ const style = {
 
 const BcBlogs = () => {
   const [post, setPosts] = useState([]);
-
+  const {user, isAuthenticated, web3, Moralis} = useMoralis();
+  const currUser = Moralis.User.current()
   const getUpdatedPosts = (allBlogs, address) => {
     let updatedPosts = [];
     for (let i = 0; i < allBlogs.length; i++) {
@@ -105,6 +107,8 @@ const BcBlogs = () => {
     <div className="bg-slate-800 pb-4">
       <div className={style.wrapper}>
         <div>
+          {console.log(post)}
+          
           {post.map((post, i, j) => (
             <div key={i}>
               <Post
