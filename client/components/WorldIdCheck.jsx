@@ -34,7 +34,7 @@ const Userverification = () => {
                     );
                     const data = await res.json();
                     console.log("data", data);
-                    router.push('/metamaskLogin')
+                    router.push('/profile')
                 }}
                 onError={(error) => console.error(error)}
                 debug={true} // to aid with debugging, remove in production
