@@ -1,7 +1,7 @@
 import React from "react";
 // import { ConnectButton } from "./ConnectButton";
 import WorldIdCheck from "../components/WorldIdCheck"
-const LoginComp = () => {
+const LoginComp = (setAuth2) => {
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="basis-1/3 text-center"></div>

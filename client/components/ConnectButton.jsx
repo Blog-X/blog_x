@@ -51,9 +51,9 @@ export const ConnectButton = () => {
     } finally {
       setIsAuthenticating(false);
     }
-    // if (authenticate) {
-    //   router.push('/worldid')
-    // }
+    if (authenticate) {
+      router.push('/worldid')
+    }
   };
 
   return (

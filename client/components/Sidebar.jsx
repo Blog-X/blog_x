@@ -11,6 +11,8 @@ import ChatNew from "../components/ChatNew";
 
 import {useState, useContext} from "react";
 
+import {useState, useContext} from "react";
+
 const styles = {
   container: "py-4 px-10 bg-gray-50 rounded-2xl h-full w-3/4 m-auto mt-4",
   title:
@@ -38,7 +40,7 @@ const Sidebar = () => {
           Icon={Home}
           isActive={Boolean(selected === "Home")}
           setSelected={setSelected}
-          redirect="/"
+          redirect="/home"
         />
         <SidebarOptions
           option="Blockchain Feed"
