@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useMoralis } from "react-moralis";
 import { useRouter } from "next/router";
 import Widgets from "./Widgets";
+import { Chat } from "@pushprotocol/uiweb";
+import ChatNew from "../components/ChatNew";
+
+import {useState, useContext} from "react";
 
 import {useState, useContext} from "react";
 
@@ -59,6 +63,14 @@ const Sidebar = () => {
           setSelected={setSelected}
           redirect="/"
         />
+        <SidebarOptions
+          option="Contact Us"
+          Icon={Phone}
+          isActive={Boolean(selected === "Contact Us")}
+          setSelected={setSelected}
+          redirect="/"
+        />
+        <ChatNew/>
         <hr />
       </div>
       <div className="hidden md:inline lg:hidden">

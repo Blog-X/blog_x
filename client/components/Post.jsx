@@ -7,7 +7,7 @@ import { AiFillDelete } from "react-icons/ai";
 import styles from "./Post.module.css";
 import Id from "../pages/bcblogs/[id]";
 import { SlUserFollow } from "react-icons/sl";
-// import { Chat } from "@pushprotocol/uiweb";
+import { Chat } from "@pushprotocol/uiweb";
 
 
 const style = {
