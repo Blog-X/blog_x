@@ -64,9 +64,9 @@ const DynamicWidgets = () => {
                                         <a>
                                             <h2>{blog.attributes.Title}</h2>
                                         </a>
-                                        <div className='font-bold'>
+                                        <Link href={"/profile/" + blog.attributes.UserAccount} key={blog.UserAccount}> <div className='font-bold'>
                                             <p>{blog.attributes.UserName}</p>
-                                        </div>
+                                        </div></Link>
                                         <div className=''>
                                             <p>{blog.attributes.blogTxt && blog.attributes.blogTxt.slice(0, 40) + (blog.attributes.blogTxt.length > 40 ? " ..." : " ")}</p>
                                             <div>

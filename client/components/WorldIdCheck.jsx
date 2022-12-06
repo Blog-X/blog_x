@@ -2,11 +2,13 @@
 import { useContext } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import HomeComp from "./HomeComp";
 
 const WorldIDWidget =
     dynamic(() => import("@worldcoin/id").then((mod) => mod.WorldIDWidget), { ssr: false, });
 
-const Userverification = () => {
+const Userverification = (props) => {
     //const ctx = useContext(AppContext);
     const router = useRouter();
     return (
@@ -34,7 +36,8 @@ const Userverification = () => {
                     );
                     const data = await res.json();
                     console.log("data", data);
-                    router.push('/metamaskLogin')
+                    // props.setAuth2(true);
+                    router.push('/')
                 }}
                 onError={(error) => console.error(error)}
                 debug={true} // to aid with debugging, remove in production

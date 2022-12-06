@@ -15,7 +15,7 @@ const styles = {
   widgets: "hidden lg:inline lg:basis-1/3 bg-slate-900 h-full overflow-x-hidden overflow-y-auto",
 };
 
-const HomeComp = () => {
+const HomeComp = (props) => {
   return (
     <div>
       <Navbar />
