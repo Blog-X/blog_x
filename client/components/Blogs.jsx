@@ -17,7 +17,7 @@ const style = {
   blogText: `text-md font-bold`,
 };
 
-const Blogs = ({ profile }) => {
+const Blogs = ({ profile, address="0" }) => {
   const [blogArr, setblogArr] = useState();
   const { Moralis } = useMoralis();
   const currentUser = Moralis.User.current();
@@ -29,7 +29,7 @@ const Blogs = ({ profile }) => {
         const Blogs = Moralis.Object.extend("Blogs");
         const query = new Moralis.Query(Blogs);
         if (profile == true) {
-          query.equalTo("UserAccount", currentUser.attributes.ethAddress);
+          query.equalTo("UserAccount", address == "0" ? currentUser.attributes.ethAddress : address);
         }
         const results = await query.find();
         setblogArr(results);

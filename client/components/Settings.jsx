@@ -69,13 +69,31 @@ const Settings = (props) => {
     userDetails.set("pfp", selectedPFP);
     userDetails.set("followerList", [])
 
+    const UserClass = await Moralis.Object.extend("UserCopy");
+    const query2 = new Moralis.Query(UserClass); // create a new query
+    let userCopy = await query2.first(); // get the first user
+    if (userCopy == null) {
+      console.log("usercopy is null");
+      userCopy = new UserClass();
+    }
+    // console.log("userCopy=",userCopy)
+    userCopy.set("username", username);
+    userCopy.set("bio", bio);
+    userCopy.set("pfp", selectedPFP);
+    userCopy.set("followerList", [])
+    userCopy.set("ethAddress", userDetails.attributes.ethAddress);
+
+    
+    
     if (file) {
       const url = await uploadImg(file, setBannerUrl);
       if (bannerUrl) {
         userDetails.set("banner", url);
+        userCopy.set("banner", url);
       } else {
         if (url) {
           userDetails.set("banner", url);
+          userCopy.set("banner", url);
         } else {
           console.log("error uploading banner");
         }
@@ -83,13 +101,14 @@ const Settings = (props) => {
     } else {
       userDetails.set("profileBanner", "abcd");
     }
-
-    console.log("user details saved successfully");
-
+    
+    
     await userDetails.save();
+    await userCopy.save();
+    console.log("user details saved successfully");
     setDetailsSaved(true);
-    router.push("/profile");
     if (detailsSaved) alert("User details saved successfully");
+    router.push("/profile");
   };
 
   return (

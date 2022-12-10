@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useMoralis } from "react-moralis";
 import { useRouter } from "next/router";
 import Widgets from "./Widgets";
+import PushChat from "./PushChat";
 
 import {useState, useContext} from "react";
 
@@ -61,6 +62,7 @@ const Sidebar = () => {
         />
         <hr />
       </div>
+      
       <div className="hidden md:inline lg:hidden">
         <Widgets />
       </div>
