@@ -43,21 +43,22 @@ export default function ProfileSlug() {
 
     const currentId = asPath.split("/")[2];
 
-
     useEffect(() => {
         const getUser = async () => {
             if (isInitialized) {
-                console.log("Moralis initialized");
+                // console.log("Moralis initialized");
                 // setCurrentUser(Moralis.User.current());
-                const User = await Moralis.Object.extend("_User");
-                const query = new Moralis.Query(User); // create a new query
-                console.log(query);
+                const User = await Moralis.Object.extend("UserCopy");
+                const query = new Moralis.Query(User);
                 query.equalTo("ethAddress", currentId);
-                const user = await query.get(currentId);
-                setCurrentUser(user);
-                console.log("Current user: ", currentUser);
+                const user = await query.find();
+                // const user = await query.first();
+                console.log(user);
+                setCurrentUser(user[0]);
+                console.log("current user", user[0])
+
             } else {
-                router.push("/user-profile");
+                router.push(`/profile/${currentId}`);
             }
         }
         getUser();
@@ -65,7 +66,7 @@ export default function ProfileSlug() {
     // const currentUser = Moralis.User.current();
     // console.log(currentUser);
 
-    if (!currentUser) {
+    if (currentUser === undefined) {
         return (
             <>
                 <Head>
@@ -151,7 +152,7 @@ export default function ProfileSlug() {
                                     </div>
                                     <div className={styles.profileTabs}>
                                         <div className={styles.profileTab}>Blogs</div>
-                                        <Blogs profile={true} />
+                                        <Blogs profile={true} account={currentUser.attributes.ethAddress} />
                                     </div>
                                 </div>
                                 <div className={styles.widgets}>

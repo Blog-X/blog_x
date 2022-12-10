@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useMoralis } from "react-moralis";
 import HomeComp from "../components/HomeComp";
 import LoginComp2 from "../components/LoginComp2";
+import LoginComp2 from "../components/LoginComp2";
 import LoginComp from "../components/LoginComp";
 
 export default function Home() {
@@ -16,8 +17,7 @@ export default function Home() {
       </Head>
       <main>
         {isAuthenticated ? <HomeComp /> : <LoginComp2 />}
-        {/* {isAuthenticated ?  : <LoginComp2 />} */}
-        {/* {<LoginComp />} */}
+        {/* {isAuthenticated ? <LoginComp/> : <LoginComp2 />} */}
         <div
           className="logout"
           onClick={() => {

@@ -10,6 +10,7 @@ import { Star, Copy, MessageCircle } from "@web3uikit/icons";
 import { BiTransfer } from "react-icons/bi";
 import { useState } from "react";
 import styles from "./id.module.css";
+import PushChat from "../../components/PushChat"; 
 
 
 const style = {
@@ -110,6 +111,7 @@ const Details = () => {
 
   return (
     <div>
+      <PushChat recieverId={b ? b.attributes.UserAccount : "0xb17bc8c23e53f463F0332008D518121B74b260d2"}/>
     <Navbar />
       <div className={style.wrapper}>
         <div className={style.columns}>
