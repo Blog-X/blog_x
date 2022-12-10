@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import Widgets from "./Widgets";
 import PushChat from "./PushChat";
 
-import {useState, useContext} from "react";
+import { useState, useContext } from "react";
 
 const styles = {
   container: "py-4 px-10 bg-gray-50 rounded-2xl h-full w-3/4 m-auto mt-4",

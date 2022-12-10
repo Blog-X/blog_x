@@ -1,6 +1,5 @@
 ![brandLogo_removebg2](https://user-images.githubusercontent.com/98473361/204555863-6202a04e-b060-4b34-8acd-dd38ac3512a4.png)
-
-# BLOGX
+# BLOG-X
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
